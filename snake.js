@@ -108,14 +108,16 @@ var queue = {
     }
 
 }
+window.onload=function(){
 initialize()
+}
 
 
 function initialize(){
+    initializeTouchControls()
     createGrid()
     paintGrid()
     velocity = RIGHT
-    console.log("reached")
     //
     //queue=undefined
     queue.addToFirst(currentPos)
@@ -148,7 +150,7 @@ function paintGrid(){
 
 function updateGridAndPaintGrind(){
     
-    console.log("updating...")
+    //console.log("updating...")
     updateGrid()
     paintGrid()
 }
@@ -196,7 +198,7 @@ function updatePosition(){
         x: currentPos.x+velocity.dx,
         y: currentPos.y+velocity.dy
     }
-    console.log(newPos)
+    //console.log(newPos)
     return newPos
 }
 
@@ -267,4 +269,35 @@ function getSpanHtmlForGridPoint(gridPoint){
     }
 }
 
+function initializeTouchControls(){
+    document.getElementById("up").addEventListener("click", upClick);
+    document.getElementById("down").addEventListener("click", downClick);
+    document.getElementById("left").addEventListener("click", leftClick);
+    document.getElementById("right").addEventListener("click", rightClick);
+}
+function upClick(){
+    console.log("up")
+    var newVelocity = LEFT
+    if( !oppositeVelocity(newVelocity)){
+        velocity = newVelocity
+    }
 
+}
+function downClick(){
+    var newVelocity = RIGHT
+    if( !oppositeVelocity(newVelocity)){
+        velocity = newVelocity
+    }
+}
+function leftClick(){
+    var newVelocity = DOWN
+    if( !oppositeVelocity(newVelocity)){
+        velocity = newVelocity
+    }
+}
+function rightClick(){
+    var newVelocity = UP
+    if( !oppositeVelocity(newVelocity)){
+        velocity = newVelocity
+    }
+}
