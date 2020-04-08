@@ -146,6 +146,7 @@ function paintGrid(){
         html = html+"</tr>"
     }
     table.innerHTML = html
+    document.getElementById("score").innerHTML = queue.length-1
 }
 
 function updateGridAndPaintGrind(){
