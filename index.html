@@ -1,6 +1,18 @@
 <html>
 <body>
 <style>
+    .mainTable{
+  height: 6px;
+  width: 6px;
+  background-color: lightcyan;
+  border: 1px;
+        align-self: center
+        
+    }
+    .score{
+        align-content: center;
+        text-align: center;
+    }
 .temp {
   height: 6px;
   width: 6px;
@@ -47,32 +59,39 @@
         
     }
 </style>
-    <table id="table"></table>
-   <script src="snake.js"></script>
-    
-<table>
-    <tr>
-        <td  class="tdd">
-        </td>
-        <td  class="tdd"><img src="up.png"  class="imgg" id="up" onclick="upClick">
-        </td>
-        <td  class="tdd"></td>
-    </tr>
-    <tr>
-        <td  class="tdd"><img src="left.png" class="imgg"  id="left">
-        </td>
-        <td  class="tdd">
-        </td>
-        <td  class="tdd"><img src="right.png" class="imgg" id="right"></td>
-    </tr>
-    <tr>
-        <td  class="tdd">
-        </td>
-        <td  class="tdd"><img src="down.png" class="imgg" id="down">
-        </td>
-        <td  class="tdd"></td>
-    </tr>
-    
+<script src="snake.js"></script>
+    <table id="mainTable" class="mainTable">
+        <tr><td id="score" class="score"></td></tr>
+        <tr><td>
+        <table id="table"></table>
+
+        </td></tr>
+        <tr>
+        <table>
+            <tr>
+                <td  class="tdd">
+                </td>
+                <td  class="tdd"><img src="up.png"  class="imgg" id="up" onclick="upClick">
+                </td>
+                <td  class="tdd"></td>
+            </tr>
+            <tr>
+                <td  class="tdd"><img src="left.png" class="imgg"  id="left">
+                </td>
+                <td  class="tdd">
+                </td>
+                <td  class="tdd"><img src="right.png" class="imgg" id="right"></td>
+            </tr>
+            <tr>
+                <td  class="tdd">
+                </td>
+                <td  class="tdd"><img src="down.png" class="imgg" id="down">
+                </td>
+                <td  class="tdd"></td>
+            </tr>
+
+        </table>
+        </tr>
     </table>
 </body>
 </html>
